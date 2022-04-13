@@ -1,0 +1,41 @@
+"~",
+"`",
+"!",
+"@",
+"#",
+"$",
+"%",
+"^",
+"&",
+"*",
+"(",
+")",
+"_",
+"-",
+"+",
+"=",
+"{",
+"}",
+"[",
+"]",
+"|",
+"\\",
+":",
+";",
+"<",
+",",
+">",
+".",
+"?",
+"/",
+"\"",
+"'"
+
+
+Number of words 2571
+Average length of words 8.109684947491248
+Variance length of words 81.93040406254667
+Number of words in comments 502
+Number of words not in comments 2069
+% of words in comments 0.19525476468300274
+% of words not in comments 0.8047452353169973

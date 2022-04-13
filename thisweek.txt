@@ -1,0 +1,195 @@
+- fix variables: Done
+    - Dim variable names, variable names.......
+    - Attribute vb_Name= "dxxxxxxx"
+    -check if he considers every string declaration as string varibales
+
+- Put entropy in function and compute all the entropies: Done
+    -Entropy of comment characters
+    -Entropy of code characters
+    -Entropy of characters
+
+- Add operators count and ratio to words Done need list
+
+- Ratio of upper case to lower case symbols DONE
+
+- Amount of underlines in macro Done
+
+- Ratio of underlines to amount of characters Done
+
+- Url Count in macro Done found inconsistensies with testcaes
+
+
+- Add functions ratio to words and prepare for list of function for each function type DONE I need full listfound inconsistensies
+
+- Clean code and seperate it into files (test file, csv extraction file, features extraction flie) and add functuion to get sets of features
+
+- fix comment countb 
+
+-Words in string and comments:
+
+    - Amount of words in strings and Avg lenthg  of string words and Ratio of words in strings to other wordsx
+
+    - Avg of commented words length
+
+
+How should I chooose the features ?
+how should I deal with missing values (infinity or to large)?
+raise the URL problem
+raise the function and operator problem
+
+Abs
+  - Atn
+  - Cos
+  - Exp
+  - Log
+  - Randomize
+  - Round
+  - Tan
+  - Sqr
+
+
+PATTERNS LIKE: 
+ipv4 6 
+httpp
+ftp
+dns style
+server with IP 
+www 
+
+fweature selction not feature merge or mix 
+
+MAMA
+classifier importance of each features and choose thet top features
+
+
+
+
+At the end of last week I had juste came up with a SVM model that didnt do well at all. I had like a 0.5 accuracy so I kept working on it and
+I thought that the problem was comming from my features like I did some mistake during the feature extraction so I rthought how I read the features extracted I ll show you later
+ or it had someting to do with the feature selection
+ so I used multiple feature selection methods: VAR thershold, SelectKbest I also buit another model: RandomForestClassifier
+but still got a 0.5 accuracy even when using RFE AND RFECV (RECURSIVE FEATURE ELIMINATION). I lost a lot of time to figure out what the problem was
+but I did.
+ The problem was that I was shuffling the features and the labels diffrently.
+ so I just fixed it and the models performed well.
+ I can show a small presentstion in a jupiter nb
+
+
+couldn t find what Mana is?
+wanted to ask nikolay what was the most performing model when you tested your dataset?
+
+I ll work on improving the accuracy
+fix one or two issues conserning the feature extraction (like URL, Identifiers)
+
+do some reaserch on deep learning...
+start writing the thesis in latex
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# print(concatenate2("mal"))
+# for i in (concatenate(testcode[0][1]).split("\\n")):
+#    print(i)
+# print(extract(concatenate2("mal")))
+# print(testcode[1][0])
+# print(extract(concatenate(testcode[1][1])))
+#his = 0
+#my = 0
+# for i in mydict:
+#    my += mydict[i][10]
+#    his += hisdict[i][10]
+
+#print(my, his)
+
+# print()
+# print(mydict["9d9419ffc877de321f85c8eb49cc86ed8f8399670c5a374ff3bce6d2d43bc298"])
+# print(hisdict["9d9419ffc877de321f85c8eb49cc86ed8f8399670c5a374ff3bce6d2d43bc298"])
+# print()
+# print(mydict["a649b145c7fe908348947d8eaf94230f2672669f3a25b8d9984bc433b6594795"])
+# print(hisdict["a649b145c7fe908348947d8eaf94230f2672669f3a25b8d9984bc433b6594795"])
+# print()
+# print(mydict["8ceb22f15f3beef9b8e7934b5b83cf50b5c179283af178eedc086a07680ba3d9"])
+# print(hisdict["8ceb22f15f3beef9b8e7934b5b83cf50b5c179283af178eedc086a07680ba3d9"])
+# print()
+# print(mydict["31bc0e40ce9ccf28b84d31de8b51da49df253b0e0423e2bcc256aacbd6144acc"])
+# print(hisdict["31bc0e40ce9ccf28b84d31de8b51da49df253b0e0423e2bcc256aacbd6144acc"])
+# print()
+
+
+#feature_plot(clf, inf)
+
+# get the importance of the resulting features.
+# importances = rf_w.feature_importances_
+# print(importances)
+# create a data frame for visualization.
+# final_df = pd.DataFrame(
+#    {"Features": indexes, "Importances": importances})
+# final_df.set_index('Importances')
+#
+# sort in ascending order to better visualization.
+# final_df = final_df.sort_values('Importances')
+#
+# plot the feature importances in bars.
+# plt.figure(figsize=(10, 3))
+# plt.xticks(rotation=45)
+# sns.barplot(x="Features", y="Importances", data=final_df)
+# plt.show()
+# plt.savefig('/temp.png')
+#
+# With feature selection check auuracy with Random Forest
+# The following example shows how to retrieve the 7 most informative features
+# model_tree = RandomForestClassifier(n_estimators=100, random_state=42)
+#
+# use RFE to eleminate the less importance features
+# sel_rfe_tree = RFE(estimator=model_tree, n_features_to_select=10, step=1)
+# X_train_rfe_tree = sel_rfe_tree.fit_transform(X_train, y_train)
+# print(sel_rfe_tree.get_support())
+# temp = []
+# for i in range(len(sel_rfe_tree.get_support())):
+# print(i+1, sel_rfe_tree.get_support()[i])
+#
+#
+# print(sel_rfe_tree.ranking_)
+# Reduce X to the selected features and then predict using the predict
+# y_pred_rf = sel_rfe_tree.predict(X_test)
+# print(metrics.accuracy_score(y_test, y_pred_rf))
+# conf_mat = confusion_matrix(y_test, y_pred_rf)
+# print(conf_mat)
+
+
+# clf1 = RandomForestClassifier(n_estimators=100)
+# clf1.fit(X_train, y_train)
+#
+# y_pred = clf1.predict(X_test)
+#
+# print("Accuracy RF : ", metrics.accuracy_score(y_test, y_pred))
+
+
+# sum += float(metrics.accuracy_score(y_test, y_pred))
+
+# print("sum: ", sum)
+# print("average: ", sum/10)

@@ -1,0 +1,2501 @@
+olevba 0.60 on Python 3.9.1 - http://decalage.info/python/oletools
+===============================================================================
+FILE: Fiche-De-Notation-Windows.xlsm
+Type: OpenXML
+-------------------------------------------------------------------------------
+VBA MACRO ThisWorkbook 
+in file: xl/vbaProject.bin - OLE stream: 'ThisWorkbook'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Private Sub Workbook_Open()
+
+If ThisWorkbook.name = "Fiche-De-Notation-Windows.xlsm" Then
+Application.Visible = False
+UserForm1.Show
+End If
+
+If ThisWorkbook.name <> "Fiche-De-Notation-Windows.xlsm" And Cells(30, 20) = "en attente" Then
+Application.Visible = False
+UserForm1.Show
+End If
+
+Dim oldname As String
+oldname = Cells(35, 35)
+If ThisWorkbook.name <> "Fiche-De-Notation-Windows.xlsm" And oldname <> "" And oldname <> "Fiche-De-Notation-Windows.xlsm" Then
+On Error Resume Next
+Kill oldname
+Cells(35, 35) = ""
+ActiveWorkbook.Saved = True
+End If
+
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO Module1 
+in file: xl/vbaProject.bin - OLE stream: 'Module1'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Sub c()
+
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO UserForm1 
+in file: xl/vbaProject.bin - OLE stream: 'UserForm1'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Sub saveFile()
+    Application.DisplayAlerts = False
+    On Error Resume Next
+    ActiveWorkbook.SaveAs Filename:=CreateObject("WScript.Shell").SpecialFolders("Desktop") & "\" & TextBox7.Value & "." & Cells(12, 9) & ".xlsm", FileFormat:=52
+End Sub
+
+
+Private Sub CommandButton1_Click()
+Dim ExitSub As Boolean
+ExitSub = False
+
+If TextBox7.Value = "" Then
+ExitSub = True
+Label50.ForeColor = RGB(255, 0, 0)
+End If
+
+If TextBox8.Value = "" Then
+ExitSub = True
+Label51.ForeColor = RGB(255, 0, 0)
+End If
+
+
+
+'CV NOTATION VALIDATION
+If OptionButton4.Value = False And _
+OptionButton6.Value = False Then
+Label4.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label4.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButton7.Value = False And _
+OptionButton9.Value = False Then
+Label19.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label19.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButton10.Value = False And _
+OptionButton11.Value = False Then
+Label15.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label15.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButton13.Value = False And _
+OptionButton14.Value = False Then
+Label14.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label14.ForeColor = RGB(0, 0, 0)
+End If
+
+If OptionButton16.Value = False And _
+OptionButton17.Value = False Then
+Label13.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label13.ForeColor = RGB(0, 0, 0)
+End If
+
+If OptionButton19.Value = False And _
+OptionButton20.Value = False Then
+Label12.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label12.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButton22.Value = False And _
+OptionButton23.Value = False And _
+OptionButton24.Value = False Then
+Label11.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label11.ForeColor = RGB(0, 0, 0)
+End If
+
+If OptionButton25.Value = False And _
+OptionButton26.Value = False Then
+Label16.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label16.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButton30.Value = False And _
+OptionButton29.Value = False And _
+OptionButton28.Value = False Then
+Label10.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label10.ForeColor = RGB(0, 0, 0)
+End If
+
+If OptionButton31.Value = False And _
+OptionButton32.Value = False Then
+Label9.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label9.ForeColor = RGB(0, 0, 0)
+End If
+
+If OptionButton1.Value = False And _
+OptionButton3.Value = False Then
+Label8.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label8.ForeColor = RGB(0, 0, 0)
+End If
+
+If OptionButton34.Value = False And _
+OptionButton35.Value = False And _
+OptionButton36.Value = False Then
+Label7.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label7.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButton37.Value = False And _
+OptionButton38.Value = False And _
+OptionButton39.Value = False Then
+Label6.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label6.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButton40.Value = False And _
+OptionButton41.Value = False And _
+OptionButton42.Value = False Then
+Label5.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label5.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButton43.Value = False And _
+OptionButton44.Value = False Then
+Label17.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label17.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButton46.Value = False And _
+OptionButton47.Value = False Then
+Label18.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label18.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButton49.Value = False And _
+OptionButton50.Value = False And _
+OptionButton51.Value = False Then
+Label25.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label25.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButton52.Value = False And _
+OptionButton53.Value = False And _
+OptionButton54.Value = False Then
+Label24.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label24.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButton55.Value = False And _
+OptionButton56.Value = False And _
+OptionButton57.Value = False Then
+Label23.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label23.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButton58.Value = False And _
+OptionButton59.Value = False And _
+OptionButton60.Value = False Then
+Label22.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label22.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButton69.Value = False And _
+OptionButton70.Value = False And _
+OptionButton71.Value = False And _
+OptionButton72.Value = False And _
+OptionButton73.Value = False And _
+OptionButton74.Value = False Then
+Label21.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label21.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButton75.Value = False And _
+OptionButton76.Value = False And _
+OptionButton77.Value = False And _
+OptionButton78.Value = False And _
+OptionButton79.Value = False And _
+OptionButton80.Value = False Then
+Label20.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label20.ForeColor = RGB(0, 0, 0)
+End If
+
+'QUESTIONS VALIDATION
+If OptionButtonS1.Value = False And _
+OptionButtonS2.Value = False And _
+OptionButtonS3.Value = False Then
+Label26.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label26.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButtonS4.Value = False And _
+OptionButtonS5.Value = False And _
+OptionButton87.Value = False Then
+Label41.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label41.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButtonS6.Value = False And _
+OptionButtonS7.Value = False And _
+OptionButtonS8.Value = False And _
+OptionButtonS9.Value = False Then
+Label37.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label37.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButtonS10.Value = False And _
+OptionButtonS11.Value = False And _
+OptionButtonS12.Value = False And _
+OptionButtonS14.Value = False And _
+OptionButtonS13.Value = False Then
+Label36.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label36.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButtonS15.Value = False And _
+OptionButtonS16.Value = False And _
+OptionButtonS17.Value = False And _
+OptionButtonS18.Value = False And _
+OptionButtonS19.Value = False Then
+Label35.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label35.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButtonS20.Value = False And _
+OptionButtonS21.Value = False And _
+OptionButtonS22.Value = False Then
+Label34.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label34.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButtonS23.Value = False And _
+OptionButtonS24.Value = False And _
+OptionButtonS25.Value = False Then
+Label33.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label33.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButtonS26.Value = False And _
+OptionButtonS27.Value = False And _
+OptionButtonS28.Value = False And _
+OptionButtonS29.Value = False And _
+OptionButtonS30.Value = False Then
+Label38.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label38.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButtonS31.Value = False And _
+OptionButtonS32.Value = False And _
+OptionButtonS33.Value = False And _
+OptionButtonS34.Value = False And _
+OptionButtonS35.Value = False Then
+Label32.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label32.ForeColor = RGB(0, 0, 0)
+End If
+
+If OptionButtonS36.Value = False And _
+OptionButtonS37.Value = False And _
+OptionButtonS38.Value = False And _
+OptionButtonS39.Value = False And _
+OptionButtonS40.Value = False Then
+Label31.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label31.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButtonS41.Value = False And _
+OptionButtonS42.Value = False And _
+OptionButtonS43.Value = False And _
+OptionButtonS44.Value = False And _
+OptionButtonS45.Value = False Then
+Label30.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label30.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButtonS46.Value = False And _
+OptionButtonS47.Value = False And _
+OptionButtonS48.Value = False Then
+Label29.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label29.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButtonS49.Value = False And _
+OptionButtonS50.Value = False And _
+OptionButtonS51.Value = False And _
+OptionButtonS52.Value = False And _
+OptionButtonS53.Value = False Then
+Label28.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label28.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButtonS54.Value = False And _
+OptionButtonS55.Value = False And _
+OptionButtonS56.Value = False And _
+OptionButtonS57.Value = False And _
+OptionButtonS58.Value = False Then
+Label27.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label27.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButtonS59.Value = False And _
+OptionButtonS60.Value = False And _
+OptionButtonS61.Value = False And _
+OptionButtonS62.Value = False And _
+OptionButtonS64.Value = False And _
+OptionButtonS65.Value = False And _
+OptionButtonS66.Value = False And _
+OptionButtonS67.Value = False And _
+OptionButtonS68.Value = False And _
+OptionButtonS63.Value = False Then
+Label39.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label39.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButtonS69.Value = False And _
+OptionButtonS70.Value = False And _
+OptionButtonS71.Value = False And _
+OptionButtonS72.Value = False And _
+OptionButtonS73.Value = False Then
+Label40.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label40.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButtonS74.Value = False And _
+OptionButtonS75.Value = False And _
+OptionButtonS76.Value = False And _
+OptionButtonS77.Value = False And _
+OptionButtonS78.Value = False Then
+Label46.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label46.ForeColor = RGB(0, 0, 0)
+End If
+
+
+If OptionButtonS79.Value = False And _
+OptionButtonS80.Value = False And _
+OptionButtonS81.Value = False Then
+Label45.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label45.ForeColor = RGB(0, 0, 0)
+End If
+
+If OptionButtonS82.Value = False And _
+OptionButtonS83.Value = False And _
+OptionButtonS84.Value = False And _
+OptionButtonS85.Value = False Then
+Label44.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label44.ForeColor = RGB(0, 0, 0)
+End If
+
+If OptionButton89.Value = False And _
+OptionButton90.Value = False And _
+OptionButton91.Value = False And _
+OptionButton92.Value = False Then
+Label5521.ForeColor = RGB(255, 0, 0)
+ExitSub = True
+Else: Label5521.ForeColor = RGB(0, 0, 0)
+End If
+
+If ExitSub = True And OptionButton88.Value = True Then
+MsgBox "Entrez les champs requis", vbOKOnly, "Champ Requis"
+Exit Sub
+Else
+Resetcolor
+End If
+
+On Error Resume Next
+'Text entry
+Cells(6, 9) = TextBox1.Value
+Cells(8, 9) = TextBox2.Value
+Cells(2, 9) = TextBox7.Value
+Cells(3, 9) = TextBox8.Value
+Cells(13, 8) = "Commentaires:  " & TextBox4.Value
+Cells(17, 8) = "Points Positifs:  " & TextBox5.Value
+Cells(20, 8) = "Points faibles:  " & TextBox6.Value
+
+'CV NOTATION
+If OptionButton4.Value Then Cells(4, 2) = 0
+If OptionButton6.Value Then Cells(4, 2) = 2
+
+If OptionButton7.Value Then Cells(5, 2) = 0
+If OptionButton9.Value Then Cells(5, 2) = 2
+
+If OptionButton11.Value Then Cells(6, 2) = 0
+If OptionButton10.Value Then Cells(6, 2) = 2
+
+If OptionButton14.Value Then Cells(7, 2) = 0
+If OptionButton13.Value Then Cells(7, 2) = 2
+
+If OptionButton17.Value Then Cells(8, 2) = 0
+If OptionButton16.Value Then Cells(8, 2) = 2
+
+If OptionButton20.Value Then Cells(9, 2) = 0
+If OptionButton19.Value Then Cells(9, 2) = 2
+
+If OptionButton23.Value Then Cells(10, 2) = 0
+If OptionButton24.Value Then Cells(10, 2) = 1
+If OptionButton22.Value Then Cells(10, 2) = 2
+
+If OptionButton26.Value Then Cells(11, 2) = 0
+If OptionButton25.Value Then Cells(11, 2) = 2
+
+If OptionButton29.Value Then Cells(12, 2) = 0
+If OptionButton30.Value Then Cells(12, 2) = 1
+If OptionButton28.Value Then Cells(12, 2) = 2
+
+If OptionButton32.Value Then Cells(13, 2) = 0
+If OptionButton31.Value Then Cells(13, 2) = 2
+
+If OptionButton1.Value Then Cells(15, 2) = 0
+If OptionButton3.Value Then Cells(15, 2) = 2
+
+If OptionButton35.Value Then Cells(16, 2) = 0
+If OptionButton36.Value Then Cells(16, 2) = 1
+If OptionButton34.Value Then Cells(16, 2) = 2
+
+If OptionButton38.Value Then Cells(17, 2) = 0
+If OptionButton39.Value Then Cells(17, 2) = 1
+If OptionButton37.Value Then Cells(17, 2) = 2
+
+If OptionButton41.Value Then Cells(18, 2) = 0
+If OptionButton42.Value Then Cells(18, 2) = 1
+If OptionButton40.Value Then Cells(18, 2) = 2
+
+If OptionButton44.Value Then Cells(19, 2) = 0
+If OptionButton43.Value Then Cells(19, 2) = 2
+
+If OptionButton47.Value Then Cells(21, 2) = 0
+If OptionButton46.Value Then Cells(21, 2) = 2
+
+If OptionButton50.Value Then Cells(22, 2) = 0
+If OptionButton51.Value Then Cells(22, 2) = 1
+If OptionButton49.Value Then Cells(22, 2) = 2
+
+If OptionButton53.Value Then Cells(23, 2) = 0
+If OptionButton54.Value Then Cells(23, 2) = 1
+If OptionButton52.Value Then Cells(23, 2) = 2
+
+If OptionButton56.Value Then Cells(24, 2) = 0
+If OptionButton57.Value Then Cells(24, 2) = 1
+If OptionButton55.Value Then Cells(24, 2) = 2
+
+If OptionButton59.Value Then Cells(25, 2) = 0
+If OptionButton60.Value Then Cells(25, 2) = 1
+If OptionButton58.Value Then Cells(25, 2) = 2
+
+If OptionButton71.Value Then Cells(28, 2) = 0
+If OptionButton72.Value Then Cells(28, 2) = 1
+If OptionButton70.Value Then Cells(28, 2) = 2
+If OptionButton73.Value Then Cells(28, 2) = 3
+If OptionButton74.Value Then Cells(28, 2) = 4
+If OptionButton69.Value Then Cells(28, 2) = 5
+
+If OptionButton76.Value Then Cells(29, 2) = 0
+If OptionButton78.Value Then Cells(29, 2) = 1
+If OptionButton77.Value Then Cells(29, 2) = 2
+If OptionButton79.Value Then Cells(29, 2) = 3
+If OptionButton80.Value Then Cells(29, 2) = 4
+If OptionButton75.Value Then Cells(29, 2) = 5
+
+'QUESTIONS:
+
+If OptionButtonS1.Value Then Cells(5, 5) = 0
+If OptionButtonS2.Value Then Cells(5, 5) = 5
+If OptionButtonS3.Value Then Cells(5, 5) = 10
+
+If OptionButtonS4.Value Then Cells(7, 5) = 5
+If OptionButtonS5.Value Then Cells(7, 5) = 10
+If OptionButton87.Value Then Cells(7, 5) = 0
+
+If OptionButtonS6.Value Then Cells(9, 5) = 5
+If OptionButtonS7.Value Then Cells(9, 5) = 7
+If OptionButtonS8.Value Then Cells(9, 5) = 8
+If OptionButtonS9.Value Then Cells(9, 5) = 10
+
+If OptionButtonS10.Value Then Cells(11, 5) = 0
+If OptionButtonS11.Value Then Cells(11, 5) = 5
+If OptionButtonS12.Value Then Cells(11, 5) = 10
+If OptionButtonS13.Value Then Cells(11, 5) = 15
+If OptionButtonS14.Value Then Cells(11, 5) = 20
+
+If OptionButtonS15.Value Then Cells(13, 5) = 0
+If OptionButtonS16.Value Then Cells(13, 5) = 5
+If OptionButtonS17.Value Then Cells(13, 5) = 10
+If OptionButtonS18.Value Then Cells(13, 5) = 15
+If OptionButtonS19.Value Then Cells(13, 5) = 20
+
+If OptionButtonS20.Value Then Cells(15, 5) = 0
+If OptionButtonS21.Value Then Cells(15, 5) = 5
+If OptionButtonS22.Value Then Cells(15, 5) = 10
+
+If OptionButtonS23.Value Then Cells(17, 5) = 0
+If OptionButtonS24.Value Then Cells(17, 5) = 5
+If OptionButtonS25.Value Then Cells(17, 5) = 10
+
+If OptionButtonS26.Value Then Cells(19, 5) = 0
+If OptionButtonS27.Value Then Cells(19, 5) = 5
+If OptionButtonS28.Value Then Cells(19, 5) = 10
+If OptionButtonS29.Value Then Cells(19, 5) = 15
+If OptionButtonS30.Value Then Cells(19, 5) = 20
+
+If OptionButtonS31.Value Then Cells(21, 5) = 0
+If OptionButtonS32.Value Then Cells(21, 5) = 5
+If OptionButtonS33.Value Then Cells(21, 5) = 10
+If OptionButtonS34.Value Then Cells(21, 5) = 15
+If OptionButtonS35.Value Then Cells(21, 5) = 20
+
+If OptionButtonS36.Value Then Cells(23, 5) = 0
+If OptionButtonS37.Value Then Cells(23, 5) = 5
+If OptionButtonS38.Value Then Cells(23, 5) = 10
+If OptionButtonS39.Value Then Cells(23, 5) = 15
+If OptionButtonS40.Value Then Cells(23, 5) = 20
+
+If OptionButtonS41.Value Then Cells(25, 5) = 0
+If OptionButtonS42.Value Then Cells(25, 5) = 5
+If OptionButtonS43.Value Then Cells(25, 5) = 10
+If OptionButtonS44.Value Then Cells(25, 5) = 15
+If OptionButtonS45.Value Then Cells(25, 5) = 20
+
+If OptionButtonS46.Value Then Cells(27, 5) = 0
+If OptionButtonS47.Value Then Cells(27, 5) = 5
+If OptionButtonS48.Value Then Cells(27, 5) = 10
+
+If OptionButtonS49.Value Then Cells(29, 5) = 1
+If OptionButtonS50.Value Then Cells(29, 5) = 2
+If OptionButtonS51.Value Then Cells(29, 5) = 3
+If OptionButtonS52.Value Then Cells(29, 5) = 4
+If OptionButtonS53.Value Then Cells(29, 5) = 5
+
+If OptionButtonS54.Value Then Cells(31, 5) = 1
+If OptionButtonS55.Value Then Cells(31, 5) = 2
+If OptionButtonS56.Value Then Cells(31, 5) = 3
+If OptionButtonS57.Value Then Cells(31, 5) = 4
+If OptionButtonS58.Value Then Cells(31, 5) = 5
+
+If OptionButtonS59.Value Then Cells(33, 5) = 1
+If OptionButtonS60.Value Then Cells(33, 5) = 2
+If OptionButtonS61.Value Then Cells(33, 5) = 3
+If OptionButtonS62.Value Then Cells(33, 5) = 4
+If OptionButtonS63.Value Then Cells(33, 5) = 5
+If OptionButtonS64.Value Then Cells(33, 5) = 6
+If OptionButtonS65.Value Then Cells(33, 5) = 7
+If OptionButtonS66.Value Then Cells(33, 5) = 8
+If OptionButtonS67.Value Then Cells(33, 5) = 9
+If OptionButtonS68.Value Then Cells(33, 5) = 10
+
+If OptionButtonS69.Value Then Cells(35, 5) = 1
+If OptionButtonS70.Value Then Cells(35, 5) = 2
+If OptionButtonS71.Value Then Cells(35, 5) = 3
+If OptionButtonS72.Value Then Cells(35, 5) = 4
+If OptionButtonS73.Value Then Cells(35, 5) = 5
+
+If OptionButtonS74.Value Then Cells(37, 5) = 1
+If OptionButtonS75.Value Then Cells(37, 5) = 2
+If OptionButtonS76.Value Then Cells(37, 5) = 3
+If OptionButtonS77.Value Then Cells(37, 5) = 4
+If OptionButtonS78.Value Then Cells(37, 5) = 5
+
+If OptionButtonS79.Value Then Cells(39, 5) = 0
+If OptionButtonS80.Value Then Cells(39, 5) = 10
+If OptionButtonS81.Value Then Cells(39, 5) = 20
+
+If OptionButtonS82.Value Then Cells(41, 5) = 0
+If OptionButtonS83.Value Then Cells(41, 5) = 5
+If OptionButtonS84.Value Then Cells(41, 5) = 10
+If OptionButtonS85.Value Then Cells(41, 5) = 15
+
+If OptionButton89.Value Then Cells(43, 5) = 0
+If OptionButton91.Value Then Cells(43, 5) = 5
+If OptionButton90.Value Then Cells(43, 5) = 10
+If OptionButton92.Value Then Cells(43, 5) = 15
+
+
+If ThisWorkbook.name <> "Fiche-De-Notation-Windows.xlsm" And OptionButton88.Value = True Then
+Dim fullpath As String
+fullpath = CreateObject("WScript.Shell").SpecialFolders("Desktop") & "\" & TextBox7.Value & "." & Cells(12, 9) & ".xlsm"
+ActiveWorkbook.SaveAs Filename:=fullpath, FileFormat:=52
+ActiveWorkbook.Close SaveChanges:=True
+Application.Quit
+Exit Sub
+End If
+If ThisWorkbook.name <> "Fiche-De-Notation-Windows.xlsm" And OptionButton88.Value = False Then
+ActiveWorkbook.Saved = True
+Exit Sub
+Application.Quit
+End If
+
+If Not ExitSub Or OptionButton88.Value = False Then
+saveFile
+CommandButton2_Click
+OptionButton88.Value = True
+Cells(30, 20) = ""
+Application.Quit
+End If
+
+End Sub
+Sub DeleteActiveWorkbook()
+Dim xFullName As String
+xFullName = Application.ActiveWorkbook.FullName
+ActiveWorkbook.Saved = True
+Application.ActiveWorkbook.ChangeFileAccess xlReadOnly
+Kill xFullName
+Application.ActiveWorkbook.Close False
+End Sub
+Private Sub Resettext()
+TextBox1.Value = ""
+TextBox2.Value = ""
+TextBox7.Value = ""
+TextBox4.Value = ""
+TextBox5.Value = ""
+TextBox6.Value = ""
+TextBox8.Value = ""
+
+End Sub
+
+Private Sub Resetcolor()
+
+Label50.ForeColor = RGB(0, 0, 0)
+Label51.ForeColor = RGB(0, 0, 0)
+
+'cv notation color reset
+Label4.ForeColor = RGB(0, 0, 0)
+Label19.ForeColor = RGB(0, 0, 0)
+Label5.ForeColor = RGB(0, 0, 0)
+Label6.ForeColor = RGB(0, 0, 0)
+Label7.ForeColor = RGB(0, 0, 0)
+Label8.ForeColor = RGB(0, 0, 0)
+Label9.ForeColor = RGB(0, 0, 0)
+Label10.ForeColor = RGB(0, 0, 0)
+Label11.ForeColor = RGB(0, 0, 0)
+Label12.ForeColor = RGB(0, 0, 0)
+Label13.ForeColor = RGB(0, 0, 0)
+Label14.ForeColor = RGB(0, 0, 0)
+Label15.ForeColor = RGB(0, 0, 0)
+Label16.ForeColor = RGB(0, 0, 0)
+Label17.ForeColor = RGB(0, 0, 0)
+Label18.ForeColor = RGB(0, 0, 0)
+Label20.ForeColor = RGB(0, 0, 0)
+Label21.ForeColor = RGB(0, 0, 0)
+Label22.ForeColor = RGB(0, 0, 0)
+Label23.ForeColor = RGB(0, 0, 0)
+Label24.ForeColor = RGB(0, 0, 0)
+Label25.ForeColor = RGB(0, 0, 0)
+Label5521.ForeColor = RGB(0, 0, 0)
+'Question color reset
+Label26.ForeColor = RGB(0, 0, 0)
+Label27.ForeColor = RGB(0, 0, 0)
+Label28.ForeColor = RGB(0, 0, 0)
+Label29.ForeColor = RGB(0, 0, 0)
+Label30.ForeColor = RGB(0, 0, 0)
+Label31.ForeColor = RGB(0, 0, 0)
+Label32.ForeColor = RGB(0, 0, 0)
+Label33.ForeColor = RGB(0, 0, 0)
+Label34.ForeColor = RGB(0, 0, 0)
+Label35.ForeColor = RGB(0, 0, 0)
+Label36.ForeColor = RGB(0, 0, 0)
+Label37.ForeColor = RGB(0, 0, 0)
+Label38.ForeColor = RGB(0, 0, 0)
+Label39.ForeColor = RGB(0, 0, 0)
+Label40.ForeColor = RGB(0, 0, 0)
+Label41.ForeColor = RGB(0, 0, 0)
+Label44.ForeColor = RGB(0, 0, 0)
+Label45.ForeColor = RGB(0, 0, 0)
+Label46.ForeColor = RGB(0, 0, 0)
+
+
+
+
+End Sub
+Private Sub Uncheckbox()
+Dim Ctrl As Control
+ For Each Ctrl In Me.Controls
+ If TypeOf Ctrl Is MSForms.OptionButton Then
+ If Ctrl.Value Then
+ If Ctrl.name <> "OptionButton88" And Ctrl.name <> "OptionButton_en_attente" Then
+ Ctrl.Value = False
+ Exit For
+ End If
+ End If
+ End If
+ Next Ctrl
+End Sub
+Private Sub CommandButton1_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+CommandButton1.BackColor = RGB(246, 185, 86)
+CommandButton2.BackColor = RGB(255, 255, 255)
+End Sub
+
+Private Sub CommandButton2_Click()
+Resetcolor
+FinalReset
+Resettext
+If UserForm1.Zoom = 100 Then OptionButton81.Value = True
+If UserForm1.Zoom = 90 Then OptionButton86.Value = True
+If UserForm1.Zoom = 80 Then OptionButton82.Value = True
+If UserForm1.Zoom = 70 Then OptionButton83.Value = True
+If UserForm1.Zoom = 60 Then OptionButton84.Value = True
+If UserForm1.Zoom = 50 Then OptionButton85.Value = True
+End Sub
+Private Sub FinalReset()
+Dim Counter
+Counter = 0
+While Counter < 50
+ Counter = Counter + 1
+ Uncheckbox
+Wend
+Cells(6, 9) = ""
+Cells(8, 9) = ""
+Cells(2, 9) = ""
+Cells(3, 9) = ""
+Cells(13, 8) = "Commentaires:  "
+Cells(17, 8) = "Points Positifs:  "
+Cells(20, 8) = "Points faibles:  "
+Cells(4, 2) = ""
+Cells(5, 2) = ""
+Cells(6, 2) = ""
+Cells(7, 2) = ""
+Cells(8, 2) = ""
+Cells(9, 2) = ""
+Cells(10, 2) = ""
+Cells(11, 2) = ""
+Cells(12, 2) = ""
+Cells(13, 2) = ""
+Cells(15, 2) = ""
+Cells(16, 2) = ""
+Cells(17, 2) = ""
+Cells(18, 2) = ""
+Cells(19, 2) = ""
+Cells(21, 2) = ""
+Cells(22, 2) = ""
+Cells(23, 2) = ""
+Cells(24, 2) = ""
+Cells(25, 2) = ""
+Cells(28, 2) = ""
+Cells(29, 2) = ""
+Cells(5, 5) = ""
+Cells(7, 5) = ""
+Cells(9, 5) = ""
+Cells(11, 5) = ""
+Cells(13, 5) = ""
+Cells(15, 5) = ""
+Cells(17, 5) = ""
+Cells(19, 5) = ""
+Cells(21, 5) = ""
+Cells(23, 5) = ""
+Cells(25, 5) = ""
+Cells(27, 5) = ""
+Cells(29, 5) = ""
+Cells(31, 5) = ""
+Cells(33, 5) = ""
+Cells(35, 5) = ""
+Cells(37, 5) = ""
+Cells(39, 5) = ""
+Cells(41, 5) = ""
+
+End Sub
+
+Private Sub CommandButton2_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+CommandButton2.BackColor = RGB(246, 185, 86)
+CommandButton1.BackColor = RGB(255, 255, 255)
+End Sub
+
+
+Private Sub Label5521_Click()
+
+End Sub
+
+Private Sub OptionButton_en_attente_Click()
+Cells(30, 20) = "en attente"
+Cells(35, 35) = ""
+End Sub
+
+Private Sub OptionButton1_Click()
+Label8.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton10_Click()
+Label15.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton11_Click()
+Label15.ForeColor = RGB(0, 0, 0)
+End Sub
+
+
+Private Sub OptionButton13_Click()
+Label14.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton14_Click()
+Label14.ForeColor = RGB(0, 0, 0)
+End Sub
+
+
+Private Sub OptionButton16_Click()
+Label13.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton17_Click()
+Label13.ForeColor = RGB(0, 0, 0)
+End Sub
+
+
+Private Sub OptionButton19_Click()
+Label12.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton2_Click()
+Label8.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton20_Click()
+Label12.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton21_Click()
+Label12.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton22_Click()
+Label11.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton23_Click()
+Label11.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton24_Click()
+Label11.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton25_Click()
+Label16.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton26_Click()
+Label16.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton27_Click()
+Label16.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton28_Click()
+Label10.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton29_Click()
+Label10.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton3_Click()
+Label8.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton30_Click()
+Label10.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton31_Click()
+Label9.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton32_Click()
+Label9.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton33_Click()
+Label9.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton34_Click()
+Label7.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton35_Click()
+Label7.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton36_Click()
+Label7.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton37_Click()
+Label6.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton38_Click()
+Label6.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton39_Click()
+Label6.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton4_Click()
+Label4.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton40_Click()
+Label5.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton41_Click()
+Label5.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton42_Click()
+Label5.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton43_Click()
+Label17.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton44_Click()
+Label17.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton45_Click()
+Label17.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton46_Click()
+Label18.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton47_Click()
+Label18.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton48_Click()
+Label18.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton49_Click()
+Label25.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton5_Click()
+Label4.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton50_Click()
+Label25.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton51_Click()
+Label25.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton52_Click()
+Label24.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton53_Click()
+Label24.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton54_Click()
+Label24.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton55_Click()
+Label23.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton56_Click()
+Label23.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton57_Click()
+Label23.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton58_Click()
+Label22.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton59_Click()
+Label22.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton6_Click()
+Label4.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton60_Click()
+Label22.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton69_Click()
+Label21.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton7_Click()
+Label19.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton70_Click()
+Label21.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton71_Click()
+Label21.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton72_Click()
+Label21.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton73_Click()
+Label21.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton74_Click()
+Label21.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton75_Click()
+Label20.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton76_Click()
+Label20.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton77_Click()
+Label20.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton78_Click()
+Label20.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton79_Click()
+Label20.ForeColor = RGB(0, 0, 0)
+End Sub
+
+
+Private Sub OptionButton80_Click()
+Label20.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton81_Click()
+UserForm1.Zoom = 100
+UserForm1.Width = 1088.25
+UserForm1.Height = 700
+End Sub
+
+Private Sub OptionButton82_Click()
+UserForm1.Zoom = 80
+UserForm1.Width = 872
+UserForm1.Height = 570
+End Sub
+
+Private Sub OptionButton86_Click()
+UserForm1.Zoom = 90
+UserForm1.Width = 980
+UserForm1.Height = 635
+End Sub
+
+Private Sub OptionButton83_Click()
+UserForm1.Zoom = 70
+UserForm1.Width = 764
+UserForm1.Height = 505
+End Sub
+
+Private Sub OptionButton84_Click()
+UserForm1.Zoom = 60
+UserForm1.Width = 656
+UserForm1.Height = 440
+End Sub
+
+Private Sub OptionButton85_Click()
+UserForm1.Zoom = 50
+UserForm1.Width = 550
+UserForm1.Height = 367
+End Sub
+
+
+
+Private Sub OptionButton88_Click()
+Cells(30, 20) = ""
+Cells(35, 35) = ThisWorkbook.FullName
+End Sub
+
+
+Private Sub OptionButton89_Click()
+Label5521.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton9_Click()
+Label19.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton90_Click()
+Label5521.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton92_Click()
+Label5521.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton91_Click()
+Label5521.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS1_Click()
+Label26.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS10_Click()
+Label36.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS10_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label558.Visible = True
+End Sub
+
+Private Sub OptionButtonS11_Click()
+Label36.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS11_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label559.Visible = True
+End Sub
+
+Private Sub OptionButtonS12_Click()
+Label36.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS12_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label560.Visible = True
+End Sub
+
+Private Sub OptionButtonS13_Click()
+Label36.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS13_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label561.Visible = True
+End Sub
+
+Private Sub OptionButtonS14_Click()
+Label36.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS14_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label562.Visible = True
+End Sub
+
+Private Sub OptionButtonS15_Click()
+Label35.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS15_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label563.Visible = True
+End Sub
+
+Private Sub OptionButtonS16_Click()
+Label35.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS16_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label564.Visible = True
+End Sub
+
+Private Sub OptionButtonS17_Click()
+Label35.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS17_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label566.Visible = True
+End Sub
+
+Private Sub OptionButtonS18_Click()
+Label35.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS18_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label565.Visible = True
+End Sub
+
+Private Sub OptionButtonS19_Click()
+Label35.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS19_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label567.Visible = True
+End Sub
+
+Private Sub OptionButtonS2_Click()
+Label26.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS2_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label550.Visible = True
+End Sub
+
+Private Sub OptionButtonS20_Click()
+Label34.ForeColor = RGB(0, 0, 0)
+End Sub
+Private Sub OptionButtonS20_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label568.Visible = True
+End Sub
+
+Private Sub OptionButtonS21_Click()
+Label34.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS21_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label569.Visible = True
+End Sub
+
+Private Sub OptionButtonS22_Click()
+Label34.ForeColor = RGB(0, 0, 0)
+End Sub
+Private Sub OptionButtonS22_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label570.Visible = True
+End Sub
+
+Private Sub OptionButtonS23_Click()
+Label33.ForeColor = RGB(0, 0, 0)
+End Sub
+Private Sub OptionButtonS23_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label571.Visible = True
+End Sub
+
+Private Sub OptionButtonS24_Click()
+Label33.ForeColor = RGB(0, 0, 0)
+End Sub
+Private Sub OptionButtonS24_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label572.Visible = True
+End Sub
+
+Private Sub OptionButtonS25_Click()
+Label33.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS25_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label573.Visible = True
+End Sub
+Private Sub OptionButtonS26_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label574.Visible = True
+End Sub
+Private Sub OptionButtonS27_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label575.Visible = True
+End Sub
+Private Sub OptionButtonS28_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label576.Visible = True
+End Sub
+Private Sub OptionButtonS29_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label577.Visible = True
+End Sub
+Private Sub OptionButtonS30_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label578.Visible = True
+End Sub
+
+Private Sub OptionButtonS26_Click()
+Label38.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS27_Click()
+Label38.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS28_Click()
+Label38.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS29_Click()
+Label38.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS3_Click()
+Label26.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS3_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label551.Visible = True
+End Sub
+
+Private Sub OptionButtonS30_Click()
+Label38.ForeColor = RGB(0, 0, 0)
+End Sub
+
+
+Private Sub OptionButtonS31_Click()
+Label32.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS31_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label705.Visible = True
+End Sub
+
+Private Sub OptionButtonS32_Click()
+Label32.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS32_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label706.Visible = True
+End Sub
+
+Private Sub OptionButtonS33_Click()
+Label32.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS33_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label707.Visible = True
+End Sub
+
+Private Sub OptionButtonS34_Click()
+Label32.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS34_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label708.Visible = True
+End Sub
+
+Private Sub OptionButtonS35_Click()
+Label32.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS35_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label709.Visible = True
+End Sub
+
+Private Sub OptionButtonS36_Click()
+Label31.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS36_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label710.Visible = True
+End Sub
+
+Private Sub OptionButtonS37_Click()
+Label31.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS37_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label711.Visible = True
+End Sub
+
+Private Sub OptionButtonS38_Click()
+Label31.ForeColor = RGB(0, 0, 0)
+End Sub
+
+
+Private Sub OptionButtonS38_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label712.Visible = True
+End Sub
+
+Private Sub OptionButtonS39_Click()
+Label31.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS39_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label713.Visible = True
+End Sub
+
+Private Sub OptionButtonS4_Click()
+Label41.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButton87_Click()
+Label41.ForeColor = RGB(0, 0, 0)
+End Sub
+
+
+Private Sub OptionButtonS4_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label552.Visible = True
+End Sub
+Private Sub OptionButton87_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label5520.Visible = True
+End Sub
+
+Private Sub OptionButtonS40_Click()
+Label31.ForeColor = RGB(0, 0, 0)
+End Sub
+
+
+Private Sub OptionButtonS40_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label714.Visible = True
+End Sub
+
+Private Sub OptionButtonS41_Click()
+Label30.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS41_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label715.Visible = True
+End Sub
+
+Private Sub OptionButtonS42_Click()
+Label30.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS42_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label716.Visible = True
+End Sub
+
+Private Sub OptionButtonS43_Click()
+Label30.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS43_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label717.Visible = True
+End Sub
+
+Private Sub OptionButtonS44_Click()
+Label30.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS44_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label718.Visible = True
+End Sub
+
+Private Sub OptionButtonS45_Click()
+Label30.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS45_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label719.Visible = True
+End Sub
+
+Private Sub OptionButtonS46_Click()
+Label29.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS46_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label720.Visible = True
+End Sub
+
+Private Sub OptionButtonS47_Click()
+Label29.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS47_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label721.Visible = True
+End Sub
+
+Private Sub OptionButtonS48_Click()
+Label29.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS48_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label725.Visible = True
+End Sub
+
+Private Sub OptionButtonS49_Click()
+Label28.ForeColor = RGB(0, 0, 0)
+End Sub
+Private Sub OptionButtonS49_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label700.Visible = True
+End Sub
+Private Sub OptionButtonS50_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label700.Visible = True
+End Sub
+Private Sub OptionButtonS51_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label700.Visible = True
+End Sub
+Private Sub OptionButtonS52_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label700.Visible = True
+End Sub
+Private Sub OptionButtonS53_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label700.Visible = True
+End Sub
+Private Sub OptionButtonS54_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label701.Visible = True
+End Sub
+Private Sub OptionButtonS55_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label701.Visible = True
+End Sub
+Private Sub OptionButtonS56_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label701.Visible = True
+End Sub
+Private Sub OptionButtonS57_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label701.Visible = True
+End Sub
+Private Sub OptionButtonS58_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label701.Visible = True
+End Sub
+Private Sub OptionButtonS59_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label702.Visible = True
+End Sub
+Private Sub OptionButtonS60_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label702.Visible = True
+End Sub
+Private Sub OptionButtonS61_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label702.Visible = True
+End Sub
+Private Sub OptionButtonS62_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label702.Visible = True
+End Sub
+Private Sub OptionButtonS63_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label702.Visible = True
+End Sub
+Private Sub OptionButtonS64_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label702.Visible = True
+End Sub
+Private Sub OptionButtonS65_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label702.Visible = True
+End Sub
+Private Sub OptionButtonS66_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label702.Visible = True
+End Sub
+Private Sub OptionButtonS67_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label702.Visible = True
+End Sub
+Private Sub OptionButtonS68_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label702.Visible = True
+End Sub
+Private Sub OptionButtonS69_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label703.Visible = True
+End Sub
+Private Sub OptionButtonS70_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label703.Visible = True
+End Sub
+Private Sub OptionButtonS71_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label703.Visible = True
+End Sub
+Private Sub OptionButtonS72_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label703.Visible = True
+End Sub
+Private Sub OptionButtonS73_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label703.Visible = True
+End Sub
+Private Sub OptionButtonS74_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label704.Visible = True
+End Sub
+Private Sub OptionButtonS75_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label704.Visible = True
+End Sub
+Private Sub OptionButtonS76_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label704.Visible = True
+End Sub
+Private Sub OptionButtonS77_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label704.Visible = True
+End Sub
+Private Sub OptionButtonS78_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label704.Visible = True
+End Sub
+Private Sub OptionButtonS5_Click()
+Label41.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS5_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label553.Visible = True
+
+End Sub
+
+Private Sub OptionButtonS50_Click()
+Label28.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS51_Click()
+Label28.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS52_Click()
+Label28.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS53_Click()
+Label28.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS54_Click()
+Label27.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS55_Click()
+Label27.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS56_Click()
+Label27.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS57_Click()
+Label27.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS58_Click()
+Label27.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS59_Click()
+Label39.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS6_Click()
+Label37.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS6_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label554.Visible = True
+End Sub
+
+Private Sub OptionButtonS60_Click()
+Label39.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS61_Click()
+Label39.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS62_Click()
+Label39.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS63_Click()
+Label39.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS64_Click()
+Label39.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS65_Click()
+Label39.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS66_Click()
+Label39.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS67_Click()
+Label39.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS68_Click()
+Label39.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS69_Click()
+Label40.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS7_Click()
+Label37.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS7_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label555.Visible = True
+End Sub
+
+Private Sub OptionButtonS70_Click()
+Label40.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS71_Click()
+Label40.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS72_Click()
+Label40.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS73_Click()
+Label40.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS74_Click()
+Label46.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS75_Click()
+Label46.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS76_Click()
+Label46.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS77_Click()
+Label46.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS78_Click()
+Label46.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS79_Click()
+Label45.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS79_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label722.Visible = True
+End Sub
+
+Private Sub OptionButtonS8_Click()
+Label37.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS8_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label556.Visible = True
+
+End Sub
+
+Private Sub OptionButtonS80_Click()
+Label45.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS80_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label723.Visible = True
+End Sub
+
+Private Sub OptionButtonS81_Click()
+Label45.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS81_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label724.Visible = True
+End Sub
+
+Private Sub OptionButtonS82_Click()
+Label44.ForeColor = RGB(0, 0, 0)
+End Sub
+Private Sub OptionButtonS82_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label726.Visible = True
+End Sub
+
+Private Sub OptionButtonS83_Click()
+Label44.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS83_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label727.Visible = True
+End Sub
+
+Private Sub OptionButtonS84_Click()
+Label44.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS84_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label728.Visible = True
+End Sub
+
+Private Sub OptionButtonS85_Click()
+Label44.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS85_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label729.Visible = True
+End Sub
+
+Private Sub OptionButtonS9_Click()
+Label37.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS9_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label557.Visible = True
+
+End Sub
+
+Private Sub TextBox1_Change()
+Dim NotNumeric As Boolean
+
+Dim TempValue As String
+
+If Not IsNumeric(TextBox1.Value) Then
+
+    If TextBox1.Value <> "" Then
+    
+          NotNumeric = True
+          
+          
+          TempValue = Left(Me.TextBox1.Value, Len(Me.TextBox1.Value) - 1)
+          
+          While NotNumeric = True And TempValue <> ""
+          
+               If Not IsNumeric(TempValue) Then
+          
+                    TempValue = Left(TempValue, Len(TempValue) - 1)
+                    
+               
+               Else
+                    
+                    NotNumeric = False
+                    
+               End If
+    
+          Wend
+          
+          Me.TextBox1.Value = TempValue
+            
+    End If
+    
+ End If
+If TextBox1.Value <> "" Then
+    If TextBox1.Value > 90 Then
+        TextBox1 = Left(TextBox1, Len(TextBox1) - 1)
+     End If
+End If
+
+If TextBox1.Value <> "" Then
+    If Right(TextBox1.Value, 1) = " " Or Right(TextBox1.Value, 1) = "+" Then
+        TextBox1 = Left(TextBox1, Len(TextBox1) - 1)
+        End If
+        
+End If
+
+
+
+
+
+End Sub
+
+
+Private Sub TextBox2_Change()
+Dim NotNumeric As Boolean
+
+Dim TempValue As String
+
+If Not IsNumeric(TextBox2.Value) Then
+
+    If TextBox2.Value <> "" Then
+    
+          NotNumeric = True
+          
+          TempValue = Left(Me.TextBox2.Value, Len(Me.TextBox2.Value) - 1)
+          
+          While NotNumeric = True And TempValue <> ""
+          
+               If Not IsNumeric(TempValue) Then
+          
+                    TempValue = Left(TempValue, Len(TempValue) - 1)
+                    
+               
+               Else
+                    
+                    NotNumeric = False
+                    
+               End If
+    
+          Wend
+          
+          Me.TextBox2.Value = TempValue
+            
+    End If
+    
+ End If
+ If TextBox2.Value <> "" Then
+    If TextBox2.Value > 100 Then
+        TextBox2 = Left(TextBox2, Len(TextBox2) - 1)
+     End If
+    End If
+If TextBox2.Value <> "" Then
+    If Right(TextBox2.Value, 1) = " " Or Right(TextBox2.Value, 1) = "+" Then
+        TextBox2 = Left(TextBox2, Len(TextBox2) - 1)
+        End If
+        
+End If
+End Sub
+
+Private Sub TextBox7_Change()
+Label50.ForeColor = RGB(0, 0, 0)
+
+End Sub
+
+Private Sub TextBox8_Change()
+Label51.ForeColor = RGB(0, 0, 0)
+End Sub
+
+Private Sub OptionButtonS1_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label54.Visible = True
+
+
+End Sub
+
+Private Sub Frame3_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Label54.Visible = False
+Label550.Visible = False
+Label551.Visible = False
+Label552.Visible = False
+Label5520.Visible = False
+Label553.Visible = False
+Label554.Visible = False
+Label555.Visible = False
+Label556.Visible = False
+Label557.Visible = False
+Label558.Visible = False
+Label559.Visible = False
+Label560.Visible = False
+Label561.Visible = False
+Label562.Visible = False
+Label563.Visible = False
+Label564.Visible = False
+Label565.Visible = False
+Label566.Visible = False
+Label567.Visible = False
+Label568.Visible = False
+Label569.Visible = False
+Label570.Visible = False
+Label571.Visible = False
+Label572.Visible = False
+Label573.Visible = False
+Label574.Visible = False
+Label575.Visible = False
+Label576.Visible = False
+Label577.Visible = False
+Label578.Visible = False
+Label700.Visible = False
+Label701.Visible = False
+Label702.Visible = False
+Label703.Visible = False
+Label704.Visible = False
+Label705.Visible = False
+Label706.Visible = False
+Label707.Visible = False
+Label708.Visible = False
+Label709.Visible = False
+Label710.Visible = False
+Label711.Visible = False
+Label712.Visible = False
+Label713.Visible = False
+Label714.Visible = False
+Label715.Visible = False
+Label716.Visible = False
+Label717.Visible = False
+Label718.Visible = False
+Label719.Visible = False
+Label720.Visible = False
+Label721.Visible = False
+Label722.Visible = False
+Label722.Visible = False
+Label723.Visible = False
+Label724.Visible = False
+Label725.Visible = False
+Label726.Visible = False
+Label727.Visible = False
+Label728.Visible = False
+Label729.Visible = False
+End Sub
+Private Sub fill_userform()
+'Text entry
+TextBox1.Value = Cells(6, 9)
+TextBox2.Value = Cells(8, 9)
+TextBox7.Value = Cells(2, 9)
+TextBox8.Value = Cells(3, 9)
+TextBox4.Value = Trim(Replace(Cells(13, 8), "Commentaires:  ", ""))
+TextBox5.Value = Trim(Replace(Cells(17, 8), "Points Positifs:  ", ""))
+TextBox6.Value = Trim(Replace(Cells(20, 8), "Points faibles:  ", ""))
+
+If Cells(4, 2) <> "" Then
+If Cells(4, 2) = 0 Then OptionButton4.Value = True
+If Cells(4, 2) = 2 Then OptionButton6.Value = True
+End If
+
+If Cells(5, 2) <> "" Then
+If Cells(5, 2) = 0 Then OptionButton7.Value = True
+If Cells(5, 2) = 2 Then OptionButton9.Value = True
+End If
+
+If Cells(6, 2) <> "" Then
+If Cells(6, 2) = 0 Then OptionButton11.Value = True
+If Cells(6, 2) = 2 Then OptionButton10.Value = True
+End If
+
+If Cells(7, 2) <> "" Then
+If Cells(7, 2) = 0 Then OptionButton14.Value = True
+If Cells(7, 2) = 2 Then OptionButton13.Value = True
+End If
+
+If Cells(8, 2) <> "" Then
+If Cells(8, 2) = 0 Then OptionButton17.Value = True
+If Cells(8, 2) = 2 Then OptionButton16.Value = True
+End If
+
+If Cells(9, 2) <> "" Then
+If Cells(9, 2) = 0 Then OptionButton20.Value = True
+If Cells(9, 2) = 2 Then OptionButton19.Value = True
+End If
+
+If Cells(10, 2) <> "" Then
+If Cells(10, 2) = 0 Then OptionButton23.Value = True
+If Cells(10, 2) = 1 Then OptionButton24.Value = True
+If Cells(10, 2) = 2 Then OptionButton22.Value = True
+End If
+
+If Cells(11, 2) <> "" Then
+If Cells(11, 2) = 0 Then OptionButton26.Value = True
+If Cells(11, 2) = 2 Then OptionButton25.Value = True
+End If
+
+If Cells(12, 2) <> "" Then
+If Cells(12, 2) = 0 Then OptionButton29.Value = True
+If Cells(12, 2) = 1 Then OptionButton30.Value = True
+If Cells(12, 2) = 2 Then OptionButton28.Value = True
+End If
+
+If Cells(13, 2) <> "" Then
+If Cells(13, 2) = 0 Then OptionButton32.Value = True
+If Cells(13, 2) = 2 Then OptionButton31.Value = True
+End If
+
+If Cells(15, 2) <> "" Then
+If Cells(15, 2) = 0 Then OptionButton1.Value = True
+If Cells(15, 2) = 2 Then OptionButton3.Value = True
+End If
+
+If Cells(16, 2) <> "" Then
+If Cells(16, 2) = 0 Then OptionButton35.Value = True
+If Cells(16, 2) = 1 Then OptionButton36.Value = True
+If Cells(16, 2) = 2 Then OptionButton34.Value = True
+End If
+
+If Cells(17, 2) <> "" Then
+If Cells(17, 2) = 0 Then OptionButton38.Value = True
+If Cells(17, 2) = 1 Then OptionButton39.Value = True
+If Cells(17, 2) = 2 Then OptionButton37.Value = True
+End If
+
+If Cells(18, 2) <> "" Then
+If Cells(18, 2) = 0 Then OptionButton41.Value = True
+If Cells(18, 2) = 1 Then OptionButton42.Value = True
+If Cells(18, 2) = 2 Then OptionButton40.Value = True
+End If
+
+If Cells(19, 2) <> "" Then
+If Cells(19, 2) = 0 Then OptionButton44.Value = True
+If Cells(19, 2) = 2 Then OptionButton43.Value = True
+End If
+
+If Cells(21, 2) <> "" Then
+If Cells(21, 2) = 0 Then OptionButton47.Value = True
+If Cells(21, 2) = 2 Then OptionButton46.Value = True
+End If
+
+If Cells(22, 2) <> "" Then
+If Cells(22, 2) = 0 Then OptionButton50.Value = True
+If Cells(22, 2) = 1 Then OptionButton51.Value = True
+If Cells(22, 2) = 2 Then OptionButton49.Value = True
+End If
+
+If Cells(23, 2) <> "" Then
+If Cells(23, 2) = 0 Then OptionButton53.Value = True
+If Cells(23, 2) = 1 Then OptionButton54.Value = True
+If Cells(23, 2) = 2 Then OptionButton52.Value = True
+End If
+
+If Cells(24, 2) <> "" Then
+If Cells(24, 2) = 0 Then OptionButton56.Value = True
+If Cells(24, 2) = 1 Then OptionButton57.Value = True
+If Cells(24, 2) = 2 Then OptionButton55.Value = True
+End If
+
+If Cells(25, 2) <> "" Then
+If Cells(25, 2) = 0 Then OptionButton59.Value = True
+If Cells(25, 2) = 1 Then OptionButton60.Value = True
+If Cells(25, 2) = 2 Then OptionButton58.Value = True
+End If
+
+If Cells(28, 2) <> "" Then
+If Cells(28, 2) = 0 Then OptionButton71.Value = True
+If Cells(28, 2) = 1 Then OptionButton72.Value = True
+If Cells(28, 2) = 2 Then OptionButton70.Value = True
+If Cells(28, 2) = 3 Then OptionButton73.Value = True
+If Cells(28, 2) = 4 Then OptionButton74.Value = True
+If Cells(28, 2) = 5 Then OptionButton69.Value = True
+End If
+
+If Cells(29, 2) <> "" Then
+If Cells(29, 2) = 0 Then OptionButton76.Value = True
+If Cells(29, 2) = 1 Then OptionButton78.Value = True
+If Cells(29, 2) = 2 Then OptionButton77.Value = True
+If Cells(29, 2) = 3 Then OptionButton79.Value = True
+If Cells(29, 2) = 4 Then OptionButton80.Value = True
+If Cells(29, 2) = 5 Then OptionButton75.Value = True
+End If
+
+If Cells(5, 5) <> "" Then
+If Cells(5, 5) = 0 Then OptionButtonS1.Value = True
+If Cells(5, 5) = 5 Then OptionButtonS2.Value = True
+If Cells(5, 5) = 10 Then OptionButtonS3.Value = True
+End If
+
+If Cells(7, 5) <> "" Then
+If Cells(7, 5) = 0 Then OptionButton87.Value = True
+If Cells(7, 5) = 5 Then OptionButtonS4.Value = True
+If Cells(7, 5) = 10 Then OptionButtonS5.Value = True
+End If
+
+If Cells(9, 5) <> "" Then
+If Cells(9, 5) = 5 Then OptionButtonS6.Value = True
+If Cells(9, 5) = 7 Then OptionButtonS7.Value = True
+If Cells(9, 5) = 8 Then OptionButtonS8.Value = True
+If Cells(9, 5) = 10 Then OptionButtonS9.Value = True
+End If
+
+If Cells(11, 5) <> "" Then
+If Cells(11, 5) = 0 Then OptionButtonS10.Value = True
+If Cells(11, 5) = 5 Then OptionButtonS11.Value = True
+If Cells(11, 5) = 10 Then OptionButtonS12.Value = True
+If Cells(11, 5) = 15 Then OptionButtonS13.Value = True
+If Cells(11, 5) = 20 Then OptionButtonS14.Value = True
+End If
+
+If Cells(13, 5) <> "" Then
+If Cells(13, 5) = 0 Then OptionButtonS15.Value = True
+If Cells(13, 5) = 5 Then OptionButtonS16.Value = True
+If Cells(13, 5) = 10 Then OptionButtonS17.Value = True
+If Cells(13, 5) = 15 Then OptionButtonS18.Value = True
+If Cells(13, 5) = 20 Then OptionButtonS19.Value = True
+End If
+
+If Cells(15, 5) <> "" Then
+If Cells(15, 5) = 0 Then OptionButtonS20.Value = True
+If Cells(15, 5) = 5 Then OptionButtonS21.Value = True
+If Cells(15, 5) = 10 Then OptionButtonS22.Value = True
+End If
+
+If Cells(17, 5) <> "" Then
+If Cells(17, 5) = 0 Then OptionButtonS23.Value = True
+If Cells(17, 5) = 5 Then OptionButtonS24.Value = True
+If Cells(17, 5) = 10 Then OptionButtonS25.Value = True
+End If
+
+If Cells(19, 5) <> "" Then
+If Cells(19, 5) = 0 Then OptionButtonS26.Value = True
+If Cells(19, 5) = 5 Then OptionButtonS27.Value = True
+If Cells(19, 5) = 10 Then OptionButtonS28.Value = True
+If Cells(19, 5) = 15 Then OptionButtonS29.Value = True
+If Cells(19, 5) = 20 Then OptionButtonS30.Value = True
+End If
+
+If Cells(21, 5) <> "" Then
+If Cells(21, 5) = 0 Then OptionButtonS31.Value = True
+If Cells(21, 5) = 5 Then OptionButtonS32.Value = True
+If Cells(21, 5) = 10 Then OptionButtonS33.Value = True
+If Cells(21, 5) = 15 Then OptionButtonS34.Value = True
+If Cells(21, 5) = 20 Then OptionButtonS35.Value = True
+End If
+
+If Cells(23, 5) <> "" Then
+If Cells(23, 5) = 0 Then OptionButtonS36.Value = True
+If Cells(23, 5) = 5 Then OptionButtonS37.Value = True
+If Cells(23, 5) = 10 Then OptionButtonS38.Value = True
+If Cells(23, 5) = 15 Then OptionButtonS39.Value = True
+If Cells(23, 5) = 20 Then OptionButtonS40.Value = True
+End If
+
+If Cells(25, 5) <> "" Then
+If Cells(25, 5) = 0 Then OptionButtonS41.Value = True
+If Cells(25, 5) = 5 Then OptionButtonS42.Value = True
+If Cells(25, 5) = 10 Then OptionButtonS43.Value = True
+If Cells(25, 5) = 15 Then OptionButtonS44.Value = True
+If Cells(25, 5) = 20 Then OptionButtonS45.Value = True
+End If
+
+If Cells(27, 5) <> "" Then
+If Cells(27, 5) = 0 Then OptionButtonS46.Value = True
+If Cells(27, 5) = 5 Then OptionButtonS47.Value = True
+If Cells(27, 5) = 10 Then OptionButtonS48.Value = True
+End If
+
+If Cells(29, 5) <> "" Then
+If Cells(29, 5) = 1 Then OptionButtonS49.Value = True
+If Cells(29, 5) = 2 Then OptionButtonS50.Value = True
+If Cells(29, 5) = 3 Then OptionButtonS51.Value = True
+If Cells(29, 5) = 4 Then OptionButtonS52.Value = True
+If Cells(29, 5) = 5 Then OptionButtonS53.Value = True
+End If
+
+If Cells(31, 5) <> "" Then
+If Cells(31, 5) = 1 Then OptionButtonS54.Value = True
+If Cells(31, 5) = 2 Then OptionButtonS55.Value = True
+If Cells(31, 5) = 3 Then OptionButtonS56.Value = True
+If Cells(31, 5) = 4 Then OptionButtonS57.Value = True
+If Cells(31, 5) = 5 Then OptionButtonS58.Value = True
+End If
+
+If Cells(33, 5) <> "" Then
+If Cells(33, 5) = 1 Then OptionButtonS59.Value = True
+If Cells(33, 5) = 2 Then OptionButtonS60.Value = True
+If Cells(33, 5) = 3 Then OptionButtonS61.Value = True
+If Cells(33, 5) = 4 Then OptionButtonS62.Value = True
+If Cells(33, 5) = 5 Then OptionButtonS63.Value = True
+If Cells(33, 5) = 6 Then OptionButtonS64.Value = True
+If Cells(33, 5) = 7 Then OptionButtonS65.Value = True
+If Cells(33, 5) = 8 Then OptionButtonS66.Value = True
+If Cells(33, 5) = 9 Then OptionButtonS67.Value = True
+If Cells(33, 5) = 10 Then OptionButtonS68.Value = True
+End If
+
+If Cells(35, 5) <> "" Then
+If Cells(35, 5) = 1 Then OptionButtonS69.Value = True
+If Cells(35, 5) = 2 Then OptionButtonS70.Value = True
+If Cells(35, 5) = 3 Then OptionButtonS71.Value = True
+If Cells(35, 5) = 4 Then OptionButtonS72.Value = True
+If Cells(35, 5) = 5 Then OptionButtonS73.Value = True
+End If
+
+If Cells(37, 5) <> "" Then
+If Cells(37, 5) = 1 Then OptionButtonS74.Value = True
+If Cells(37, 5) = 2 Then OptionButtonS75.Value = True
+If Cells(37, 5) = 3 Then OptionButtonS76.Value = True
+If Cells(37, 5) = 4 Then OptionButtonS77.Value = True
+If Cells(37, 5) = 5 Then OptionButtonS78.Value = True
+End If
+
+If Cells(39, 5) <> "" Then
+If Cells(39, 5) = 0 Then OptionButtonS79.Value = True
+If Cells(39, 5) = 10 Then OptionButtonS80.Value = True
+If Cells(39, 5) = 20 Then OptionButtonS81.Value = True
+End If
+
+If Cells(41, 5) <> "" Then
+If Cells(41, 5) = 0 Then OptionButtonS82.Value = True
+If Cells(41, 5) = 5 Then OptionButtonS83.Value = True
+If Cells(41, 5) = 10 Then OptionButtonS84.Value = True
+If Cells(41, 5) = 15 Then OptionButtonS85.Value = True
+End If
+
+If Cells(43, 5) <> "" Then
+If Cells(43, 5) = 0 Then OptionButton89.Value = True
+If Cells(43, 5) = 5 Then OptionButton91.Value = True
+If Cells(43, 5) = 10 Then OptionButton90.Value = True
+If Cells(43, 5) = 15 Then OptionButton92.Value = True
+End If
+
+End Sub
+
+Private Sub UserForm_Initialize()
+Dim Counter
+Counter = 0
+While Counter < 50
+ Counter = Counter + 1
+ Uncheckbox
+Wend
+Resettext
+If Cells(30, 20) = "en attente" Then
+OptionButton_en_attente.Value = True
+fill_userform
+End If
+If Cells(30, 20) = "" Then OptionButton88.Value = True
+If ThisWorkbook.name = "Fiche-De-Notation-Windows.xlsm" Then
+CommandButton2_Click
+End If
+OptionButton83.Value = True
+Label54.Visible = False
+Label550.Visible = False
+Label551.Visible = False
+Label552.Visible = False
+Label5520.Visible = False
+Label553.Visible = False
+Label554.Visible = False
+Label555.Visible = False
+Label556.Visible = False
+Label557.Visible = False
+Label558.Visible = False
+Label559.Visible = False
+Label560.Visible = False
+Label561.Visible = False
+Label562.Visible = False
+Label563.Visible = False
+Label564.Visible = False
+Label565.Visible = False
+Label566.Visible = False
+Label567.Visible = False
+Label568.Visible = False
+Label569.Visible = False
+Label570.Visible = False
+Label571.Visible = False
+Label572.Visible = False
+Label573.Visible = False
+Label574.Visible = False
+Label575.Visible = False
+Label576.Visible = False
+Label577.Visible = False
+Label578.Visible = False
+Label700.Visible = False
+Label701.Visible = False
+Label702.Visible = False
+Label703.Visible = False
+Label704.Visible = False
+Label705.Visible = False
+Label706.Visible = False
+Label707.Visible = False
+Label708.Visible = False
+Label709.Visible = False
+Label710.Visible = False
+Label711.Visible = False
+Label712.Visible = False
+Label713.Visible = False
+Label714.Visible = False
+Label715.Visible = False
+Label716.Visible = False
+Label717.Visible = False
+Label718.Visible = False
+Label719.Visible = False
+Label720.Visible = False
+Label721.Visible = False
+Label722.Visible = False
+Label722.Visible = False
+Label723.Visible = False
+Label724.Visible = False
+Label725.Visible = False
+Label726.Visible = False
+Label727.Visible = False
+Label728.Visible = False
+Label729.Visible = False
+End Sub
+
+Private Sub UserForm_MouseMove(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+CommandButton1.BackColor = RGB(255, 255, 255)
+CommandButton2.BackColor = RGB(255, 255, 255)
+Label54.Visible = False
+Label550.Visible = False
+Label551.Visible = False
+Label552.Visible = False
+Label553.Visible = False
+Label5520.Visible = False
+Label554.Visible = False
+Label555.Visible = False
+Label556.Visible = False
+Label557.Visible = False
+Label558.Visible = False
+Label559.Visible = False
+Label560.Visible = False
+Label561.Visible = False
+Label562.Visible = False
+Label563.Visible = False
+Label564.Visible = False
+Label565.Visible = False
+Label566.Visible = False
+Label567.Visible = False
+Label568.Visible = False
+Label569.Visible = False
+Label570.Visible = False
+Label571.Visible = False
+Label572.Visible = False
+Label573.Visible = False
+Label574.Visible = False
+Label575.Visible = False
+Label576.Visible = False
+Label577.Visible = False
+Label578.Visible = False
+Label700.Visible = False
+Label701.Visible = False
+Label702.Visible = False
+Label703.Visible = False
+Label704.Visible = False
+Label705.Visible = False
+Label706.Visible = False
+Label707.Visible = False
+Label708.Visible = False
+Label709.Visible = False
+Label710.Visible = False
+Label711.Visible = False
+Label712.Visible = False
+Label713.Visible = False
+Label714.Visible = False
+Label715.Visible = False
+Label716.Visible = False
+Label717.Visible = False
+Label718.Visible = False
+Label719.Visible = False
+Label720.Visible = False
+Label721.Visible = False
+Label722.Visible = False
+Label722.Visible = False
+Label723.Visible = False
+Label724.Visible = False
+Label725.Visible = False
+Label726.Visible = False
+Label727.Visible = False
+Label728.Visible = False
+Label729.Visible = False
+End Sub
+
+Private Sub UserForm_Terminate()
+On Error Resume Next
+If ThisWorkbook.name = "Fiche-De-Notation-Windows.xlsm" Then
+OptionButton88.Value = True
+Cells(30, 20) = ""
+End If
+ActiveWorkbook.Save
+Application.Quit
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO Classe1 
+in file: xl/vbaProject.bin - OLE stream: 'Classe1'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO Feuil1 
+in file: xl/vbaProject.bin - OLE stream: 'Feuil1'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO Module2 
+in file: xl/vbaProject.bin - OLE stream: 'Module2'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Sub Bouton1_Cliquer()
+UserForm1.Show
+
+End Sub
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'xl/vbaProject.bin' - OLE stream: 'UserForm1/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 

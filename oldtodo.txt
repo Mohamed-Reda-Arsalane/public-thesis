@@ -1,0 +1,122 @@
+Code Cleaning:
+
+put variables and types in function:
+NEED TO ADD SHORTCUTS: Dim intX%, intY%, intZ as Integer
+
+(If bored)strings function
+
+words function + fix words addspaces...
+
+
+
+
+Features:
+
+fix words addspaces...
+appearance frequency of string operators add a mask to know if the two vars are strings 
+
+
+2
+avg. length of identifiers
+var. length of identifiers
+
+Testing:
+YK
+
+
+
+1- Done
+put variables and types in function:
+NEED TO ADD SHORTCUTS: Dim intX%, intY%, intZ as Integer
+
+2-  Done I think I cut to much will see during testing
+words function + fix words addspaces...
+
+6-
+appearance frequency of string operators add a mask to know if the two vars are strings 
+
+
+3-
+avg. length of identifiers
+var. length of identifiers
+
+4-
+Extract from CSV
+
+5-
+string function and comment function clean code and write comments
+
+
+
+-identifier can be multiple things class method function........
+-testcases
+-should I start the model ?
+
+
+replace symbols like "(" with " ( " exept _ .
+if ends or starts with symbol remove symbol and do it again until false
+if only symbols
+
+
+
+
+
+
+ We judge a word to be readable if it is > 70% alphabetical, has
+20% < vowels < 60%, is less than 15 characters long, and does not
+contain > 2 repetitions of the same character in a row.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Trim(Str(lNumColumnas)) ceck func call
+
+
+
+
+
+
+
+
+
+
+
+
+
+-check why there is a difference when I copied that to mal and what ius the right way to do it
+-Add attributes
+-Add classes and methods
+-Add identifiers
+
+
+-this week I mainly worked on the data that nkolay sent me I had a look at the featurees used and compared them with the one I coded then I wrote a smple 
+test prorgram to compute the avg percentage change of each featutre that we had in common. for the majoriy I found out the % is small (0.5, 1.5)
+we had some notable differences like  
+
+-Add string varibale declarion like (-Attribute vb_Name= "dxxxxxxx" )
+             and check if he considers every string declaration as string varibales
+
+-talk about differences like:
+             he counts lines containing \r
+             he is not countingwhite spaces in char count
+
+-I only computed the Entropy of the entire code
+
+-When I compute the ratio of text or arithmetic function calls I dived by the total number of function calls including the user user declared one.
+I saw that you dived by the number of words and wanted to ask what do you belive is the best pracice and sould I change it.
+
+-Are the Open functions the Open statements like Open flitepath As...
+-if yes is the get functions theget statement or the GetAllSettings GetAttr GetObject GetSetting 

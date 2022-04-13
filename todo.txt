@@ -1,0 +1,6 @@
+-MINIMUN RENDENDENCY MAXIMUN RELEVENCE
+-AUTOVIUTUS
+-hyper parameters tuning: (C GAMMA for SVM) GRID, RANDOM SELCTION 
+-AOC plot of accuracy selon threshold
+-feature selection a la main to check if too much featurees to start with creae noise
+-test mlp for fun

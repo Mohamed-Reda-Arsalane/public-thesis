@@ -1,0 +1,52 @@
+  
+
+
+
+
+    test.append(casing_ratio)
+    test.append(char_count)
+    test.append(avgchar_inline)
+    test.append(line_count)
+  
+    test.append(whitespace)
+    
+    test.append(casingr)
+    
+    test.append(underlineratio)
+    test.append(entvode)
+    
+    test.append(ent)
+
+    test.append(avg_word_length)
+    test.append(var_word_length)
+    test.append(humanreadable)
+    
+
+    
+
+
+
+
+
+
+
+    
+    test.append(op_ratio)
+    test.append(ftextw)
+    
+
+
+
+
+
+    test.append(fprocw)
+ 
+    test.append(avg_string_length)
+    test.append(stringcount)
+    
+
+
+
+    
+    test.append(codechar_count)
+  
